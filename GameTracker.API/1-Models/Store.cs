@@ -1,4 +1,4 @@
-namespace models.Store;
+namespace GameTracker.Models;
 
 public class Store
 {

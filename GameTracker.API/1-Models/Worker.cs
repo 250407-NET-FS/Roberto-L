@@ -1,5 +1,4 @@
-namespace models.worker;
-
+namespace GameTracker.Models;
 public class Worker()
 {
     private string Id { get; set; } = Guid.NewGuid().ToString();

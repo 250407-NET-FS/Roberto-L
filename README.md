@@ -4,7 +4,7 @@
         -Create an API where a store can keep track the curret inventory of the store.
 
     Summary:
-        -The Game Tracker will allow workers to check on inventory and track checkouts .
+        -The Game Tracker will allow workers to check on inventory and track checkouts.
 
     Create an API thet does the follwoing:
         -Keep inventory of games and condition they are in.
@@ -32,10 +32,9 @@
             Workers Id (A Key), and consoles/games inventory, Price
         
 
-## Strech Goals
-
-    Make a simple website that allows for us to look for what games are available.
-    If website is possible try to have a image for items
+    Strech Goals:
+        -Make a simple website that allows for us to look for what games are available.
+        -If website is possible try to have a image for items
 
 ## Overview (Due: 04/18/2025)
 
