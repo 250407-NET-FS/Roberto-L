@@ -6,6 +6,6 @@ public interface IGameConsoleRepository
 {
     List<GameConsole> GetAllGameConsoles();
     public List<GameConsole> GetGameConsoleByFilters(Dictionary<string, object> filters);
-    void AddConsole(GameConsole gameConsole);
-    void UpdateConsole(GameConsole gameConsole);
+    void AddGameConsole(GameConsole gameConsole);
+    void UpdateGameConsole(GameConsole gameConsole);
 }

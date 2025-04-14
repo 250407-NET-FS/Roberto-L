@@ -2,26 +2,26 @@ using GameTracker.DTOs;
 using GameTracker.Models;
 using GameTracker.Repositories;
 
-public class GameService : IGameService
+public class GameConsoleService : IGameConsoleService
 {
-    private readonly IGameRepository _gameRepo;
+    private readonly IGameConsoleRepository _gameConsoleRepo;
 
-    public GameService(IGameRepository gameRepo)
+    public GameConsoleService(IGameConsoleRepository gameConsoleRepo)
     {
-        _gameRepo = gameRepo;
+        _gameConsoleRepo = gameConsoleRepo;
     }
 
-    public void AddOrUpdateGame(Game incomingGame)
+    public void AddOrUpdateGame(GameConsole incomingGameConsole)
     {
-        var existingGame = _gameRepo.GetAllGames().FirstOrDefault(g => g.Name == incomingGame.Name && g.Condition == incomingGame.Condition);
-        if (existingGame is not null)
+        var existingGameConsole = _gameConsoleRepo.GetAllGameConsoles().FirstOrDefault(g => g.Name == incomingGameConsole.Name && g.Condition == incomingGameConsole.Condition);
+        if (existingGameConsole is not null)
         {
-            existingGame.Inventory += incomingGame.Inventory;
-            _gameRepo.UpdateGame(existingGame);
+            existingGameConsole.Inventory += incomingGameConsole.Inventory;
+            _gameConsoleRepo.UpdateGameConsole(existingGameConsole);
         }
         else
         {
-            _gameRepo.AddGame(incomingGame);
+            _gameConsoleRepo.AddGameConsole(incomingGameConsole);
         }
     }
 }

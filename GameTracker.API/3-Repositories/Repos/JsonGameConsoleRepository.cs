@@ -63,25 +63,25 @@ public class JsonGameConsoleRepository : IGameConsoleRepository
         return gameConsoles;
     }
 
-    public void AddConsole(GameConsole gameConsole)
+    public void AddGameConsole(GameConsole gameConsole)
     {
         var gameConsoles = GetAllGameConsoles();
         gameConsoles.Add(gameConsole);
-        SaveConsoles(gameConsoles);
+        SaveGameConsoles(gameConsoles);
     }
 
-    public void UpdateConsole(GameConsole gameConsole)
+    public void UpdateGameConsole(GameConsole gameConsole)
     {
         var consoles = GetAllGameConsoles();
         var index = consoles.FindIndex(g => g.Name == gameConsole.Name && g.Condition == gameConsole.Condition);
         if (index >= 0)
         {
             consoles[index] = gameConsole;
-            SaveConsoles(consoles);
+            SaveGameConsoles(consoles);
         }
     }
 
-    private void SaveConsoles(List<GameConsole> gameConsoles)
+    private void SaveGameConsoles(List<GameConsole> gameConsoles)
     {
         try
         {

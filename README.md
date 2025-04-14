@@ -45,7 +45,7 @@ For this project, you'll create an ASP.NET Core MinimalAPI project, where the ap
     Project hosted on GitHub
     README that describes the application and its functionalities
     ERD of your models and the relationships between them
-    The application should be ASP.NET Core Minimal APIapplication
+    The application should be ASP.NET Core Minimal API application
     The application should build and run
     The application should have unit tests and at least 20% coverage
     The application should communicate via HTTP(s) (Must have POST, GET, DELETE)

@@ -3,7 +3,7 @@ namespace GameTracker.Models;
 public class Game
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
-    public string Store_Id { get; set; }
+    public string StoreId { get; set; }
     public int Inventory { get; set; }
     public decimal Price { get; set; }
     public GameCondition Condition { get; set; }
