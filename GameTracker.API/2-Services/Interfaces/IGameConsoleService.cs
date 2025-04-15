@@ -1,9 +1,16 @@
 using GameTracker.DTOs;
 using GameTracker.Models;
 
-namespace GameTracker.Repositories;
+namespace GameTracker.Services;
 
 public interface IGameConsoleService
 {
-    void AddOrUpdateGame(GameConsole incomingGameConsole);
+    // Add or update a game console, receiving a GameConsoleCreateDTO for creation
+    void AddOrUpdateGameConsole(GameConsoleCreateDTO incomingGameConsoleDTO);
+
+    // Get all game consoles, returning a list of GameConsoleReadDTOs
+    List<GameConsoleReadDTO> GetAllGameConsoles();
+
+    // Get game consoles by filters, returning a list of GameConsoleReadDTOs
+    List<GameConsoleReadDTO> GetGameConsolesByFilters(Dictionary<string, object> filters);
 }

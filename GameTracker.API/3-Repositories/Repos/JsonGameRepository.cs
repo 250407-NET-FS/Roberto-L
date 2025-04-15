@@ -1,5 +1,6 @@
 using System.Text.Json;
 using GameTracker.Models;
+using System.Text.Json.Serialization;
 
 namespace GameTracker.Repositories;
 
@@ -9,7 +10,7 @@ public class JsonGameRepository : IGameRepository
 
     public JsonGameRepository()
     {
-        _filePath = Path.Combine("./5-Data-Files/games.json");
+        _filePath = Path.Combine("./5-Data Files/games.json");
     }
 
     public List<Game> GetAllGames()
@@ -21,11 +22,17 @@ public class JsonGameRepository : IGameRepository
 
             using var stream = File.OpenRead(_filePath);
 
-            return JsonSerializer.Deserialize<List<Game>>(stream) ?? new List<Game>();
+            return JsonSerializer.Deserialize<List<Game>>(stream, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter() }
+            }) ?? new List<Game>();
         }
 
         catch
         {
+            Console.WriteLine($"[DEBUG] Game JSON path: {_filePath}");
+            Console.WriteLine($"[DEBUG] File exists: {File.Exists(_filePath)}");
             throw new Exception("Failed to retrive games.");
         }
     }

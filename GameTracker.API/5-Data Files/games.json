@@ -1,0 +1,35 @@
+[
+    {
+        "Id": "b3a5b67e-3b91-4c52-9a3b-84cfbfc4b69c",
+        "StoreId": "store001",
+        "Inventory": 10,
+        "Price": 29.99,
+        "Condition": 0,
+        "Publisher": "Ubisoft",
+        "Developer": "Ubisoft Montreal",
+        "Name": "Assassin\u0027s Creed Valhalla",
+        "Year": 2020
+    },
+    {
+        "Id": "2b64f972-77a1-4428-8cfa-1cdb3c8c88a3",
+        "StoreId": "store002",
+        "Inventory": 5,
+        "Price": 19.99,
+        "Condition": 1,
+        "Publisher": "Electronic Arts",
+        "Developer": "BioWare",
+        "Name": "Mass Effect Legendary Edition",
+        "Year": 2021
+    },
+    {
+        "Id": "a7aec67f-3ca9-47fe-a05b-b12e4c940be8",
+        "StoreId": "store001",
+        "Inventory": 100,
+        "Price": 20.00,
+        "Condition": 0,
+        "Publisher": "Sony Computer Entertainment",
+        "Developer": "Sony Computer Entertainment Japan",
+        "Name": "Shadow of the Colossus",
+        "Year": 2005
+    }
+]
