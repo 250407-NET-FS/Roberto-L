@@ -23,11 +23,11 @@
         -Games:
             Id (A Key), Store Id(FK), inventory, Price, condition, publisher, developer, name, and year
         -Tags
-            Tag Id, name (1st, 2d, 3d, Action, Puzzle, etc.)
+            Tag Id and name (1st, 2d, 3d, Action, Puzzle, etc.)
         -Game Tags
             Game Id (want so that a tag can have many games), Tag id (want it so game can can have many tags)
         -Store Managers
-            Store Id and Worker Id
+            Store Id, Worker Id, Woker position
         -Checkout
             Workers Id (A Key), and consoles/games inventory, Price
         
