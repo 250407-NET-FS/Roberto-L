@@ -1,63 +1,93 @@
 using GameTracker.DTOs;
 using GameTracker.Models;
 using GameTracker.Repositories;
+using System.Threading.Tasks;
 
-namespace GameTracker.Services;
-
-public class WorkerService : IWorkerService
+namespace GameTracker.Services
 {
-    private readonly IWorkerRepository _workerRepo;
-
-    public WorkerService(IWorkerRepository workerRepo)
+    public class WorkerService : IWorkerService
     {
-        _workerRepo = workerRepo;
-    }
+        private readonly IWorkerRepository _workerRepo;
 
-    public List<WorkerReadDTO> GetAllWorkers()
-    {
-        var workers = _workerRepo.GetAllWorkers();
-        return workers.Select(w => new WorkerReadDTO
+        public WorkerService(IWorkerRepository workerRepo)
         {
-            Id = w.Id,
-            Name = w.Name,
-            Username = w.Username,
-            Position = w.Position
-        }).ToList();
-    }
+            _workerRepo = workerRepo;
+        }
 
-    public WorkerReadDTO? GetWorkerById(string id)
-    {
-        var worker = _workerRepo.GetWorkerById(id);
-        if (worker is not null)
+        // Get all workers asynchronously
+        public async Task<List<WorkerReadDTO>> GetAllWorkersAsync()
         {
+            var workers = await _workerRepo.GetAllWorkersAsync();
+            return workers.Select(w => new WorkerReadDTO
+            {
+                Id = w.Id,
+                Name = w.Name,
+                Username = w.Username,
+                Position = w.Position
+            }).ToList();
+        }
+
+        // Get a worker by ID asynchronously
+        public async Task<WorkerReadDTO?> GetWorkerByIdAsync(int id)
+        {
+            var worker = await _workerRepo.GetWorkerByIdAsync(id);
+            if (worker != null)
+            {
+                return new WorkerReadDTO
+                {
+                    Id = worker.Id,
+                    Name = worker.Name,
+                    Username = worker.Username,
+                    Position = worker.Position
+                };
+            }
+            return null;
+        }
+
+        // Add a new worker asynchronously
+        public async Task<WorkerReadDTO> AddWorkerAsync(WorkerCreateDTO workerDTO)
+        {
+            var worker = new Worker
+            {
+                Name = workerDTO.Name,
+                Username = workerDTO.Username,
+                Password = workerDTO.Password,
+                Position = workerDTO.Position,
+                StoreId = workerDTO.StoreId
+            };
+
+            Worker addedWorker = await _workerRepo.AddWorkerAsync(worker);
+
             return new WorkerReadDTO
             {
-                Id = worker.Id,
-                Name = worker.Name,
-                Username = worker.Username,
-                Position = worker.Position
+                Id = addedWorker.Id,
+                Name = addedWorker.Name,
+                Username = addedWorker.Username,
+                Position = addedWorker.Position,
+                StoreName = addedWorker.Store?.Name
             };
         }
-        return null;
-    }
 
-    public void AddWorker(WorkerCreateDTO workerCreateDTO)
-    {
-        var worker = new Worker
+        // Update a worker asynchronously
+        public async Task UpdateWorkerAsync(int id, WorkerUpdateDTO workerUpdateDTO)
         {
-            Id = Guid.NewGuid().ToString(),
-            StoreId = workerCreateDTO.StoreId,
-            Name = workerCreateDTO.Name,
-            Username = workerCreateDTO.Username,
-            Password = workerCreateDTO.Password,
-            Position = workerCreateDTO.Position
-        };
+            var worker = await _workerRepo.GetWorkerByIdAsync(id);
+            if (worker != null)
+            {
+                worker.Name = workerUpdateDTO.Name;
+                worker.Username = workerUpdateDTO.Username;
+                worker.Position = workerUpdateDTO.Position;
+                if (!string.IsNullOrEmpty(workerUpdateDTO.Password)) // Only update password if provided
+                {
+                    worker.Password = workerUpdateDTO.Password;
+                }
 
-        _workerRepo.AddWorker(worker);
-    }
-
-    public void UpdateWorker(Worker worker)
-    {
-        _workerRepo.UpdateWorker(worker);
+                await _workerRepo.UpdateWorkerAsync(worker);
+            }
+            else
+            {
+                throw new Exception("Worker not found");
+            }
+        }
     }
 }

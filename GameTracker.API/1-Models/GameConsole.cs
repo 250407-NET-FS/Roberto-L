@@ -2,14 +2,15 @@ namespace GameTracker.Models;
 
 public class GameConsole
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
-    public string StoreId { get; set; }
-    public int Inventory { get; set; }
-    public decimal Price { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
     public GameConsoleCondition Condition { get; set; }
     public string Developer { get; set; }
-    public string Name { get; set; }
+    public decimal Price { get; set; }
     public int Year { get; set; }
+    public int StoreId { get; set; }
+
+    public Store Store { get; set; }  // Navigation property to the Store model
 }
 public enum GameConsoleCondition
 {

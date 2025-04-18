@@ -4,8 +4,19 @@ namespace GameTracker.Repositories;
 
 public interface IGameConsoleRepository
 {
-    List<GameConsole> GetAllGameConsoles();
-    public List<GameConsole> GetGameConsoleByFilters(Dictionary<string, object> filters);
-    void AddGameConsole(GameConsole gameConsole);
-    void UpdateGameConsole(GameConsole gameConsole);
+    // Get all game consoles
+    Task<List<GameConsole>> GetAllGameConsolesAsync();
+
+    // Get game consoles by filters
+    Task<List<GameConsole>> GetGameConsolesByFiltersAsync(Dictionary<string, object> filters);
+
+    // Add a new game console
+    Task AddGameConsoleAsync(GameConsole gameConsole);
+
+    // Update an existing game console
+    Task UpdateGameConsoleAsync(GameConsole gameConsole);
+
+    Task<GameConsole?> GetGameConsoleByIdAsync(int id);
+
+    Task RemoveGameConsoleAsync(GameConsole gameConsole);
 }

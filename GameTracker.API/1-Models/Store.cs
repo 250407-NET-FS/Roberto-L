@@ -2,7 +2,10 @@ namespace GameTracker.Models;
 
 public class Store
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public int Id { get; set; }
     public string Name { get; set; }
-    public string WorkerId { get; set; }
+
+    public ICollection<Worker> Workers { get; set; } = new List<Worker>();
+    public ICollection<Game> Games { get; set; } = new List<Game>();
+    public ICollection<GameConsole> GameConsoles { get; set; } = new List<GameConsole>();
 }

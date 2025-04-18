@@ -4,8 +4,8 @@ namespace GameTracker.Repositories;
 
 public interface IWorkerRepository
 {
-    List<Worker> GetAllWorkers();
-    Worker? GetWorkerById(string id);
-    void AddWorker(Worker worker);
-    void UpdateWorker(Worker worker);
+    Task<List<Worker>> GetAllWorkersAsync();
+    Task<Worker?> GetWorkerByIdAsync(int id);
+    Task<Worker> AddWorkerAsync(Worker worker);
+    Task UpdateWorkerAsync(Worker worker);
 }

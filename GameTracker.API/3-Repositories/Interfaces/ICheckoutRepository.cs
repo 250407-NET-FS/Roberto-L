@@ -4,7 +4,12 @@ namespace GameTracker.Repositories;
 
 public interface ICheckoutRepository
 {
-    List<Checkout> GetAllCheckouts();
-    Checkout? GetCheckoutById(string id);
-    void AddCheckout(Checkout checkout);
+    // Get all checkouts
+    Task<List<Checkout>> GetAllCheckoutsAsync();
+
+    // Get a checkout by its ID
+    Task<Checkout?> GetCheckoutByIdAsync(int id);
+
+    // Add a new checkout
+    Task AddCheckoutAsync(Checkout checkout);
 }

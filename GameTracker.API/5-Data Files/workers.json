@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "adabe1d9-91d0-4109-9f3a-dceba06fa8ba",
+    "StoreId": "0058ae93-a247-472e-9602-0bbdf80b86bc",
+    "Store": null,
+    "Name": "Roberto Lopez",
+    "Username": "Rlopez",
+    "Password": "NotSecure123",
+    "Position": "Manager",
+    "Checkouts": []
+  }
+]

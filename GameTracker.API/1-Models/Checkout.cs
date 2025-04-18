@@ -2,12 +2,15 @@ namespace GameTracker.Models;
 
 public class Checkout
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
-    public string ItemId { get; set; }
-    public ItemType ItemType { get; set; }
-    public string StoreId { get; set; }
-    public int Quantity { get; set; }
+    public int Id { get; set; }
+    public int WorkerId { get; set; } // FK to Worker
+    public int GameId { get; set; }   // FK to Game
+    public int GameConsoleId { get; set; } // FK to Console
     public DateTime CheckoutDate { get; set; } = DateTime.UtcNow;
+
+    public Worker Worker { get; set; }    // Navigation property to Worker
+    public Game Game { get; set; }        // Navigation property to Game
+    public GameConsole GameConsole { get; set; }  // Navigation property to Console
 }
 public enum ItemType
 {
