@@ -4,15 +4,7 @@
         -Create an API where a store can keep track the curret inventory of the store.
 
     Summary:
-        -The Game Store Tracker will allow workers to check on inventory and track checkouts.
-
-    ES: add some technical termonilgy
-
-        1st
-        The Game Store Traker is amied to help those starting a a buniess in which they sale games and consoles. This would allow the ower, user, to make a store asgin workers to the store Once workers are added they can then start adding invetory by inputing the games info, such as Name, Developer, Publisher, Year, and Condition. We can also do the same for Console which use Name, Developer, Year, and Condition. We then can create tags, a one word decription of teh game such as Action, so that we can assign them to games, they can have mutiple tags such as 1st person, action, and shooter. The worker, if cashier, sould be able to procees checkouts of an a item that was sold. As on outside user, not a worker or owner, to view teh current games avliable.
-
-        2nd
-        The Game Store Tracker is amied to help those starting a busniess in which they sale games and consoles. This would allow the owner, authenticated user, to make a store enity iin which he can start to add Workers and assagin positions. Once the workes are added we can the use CRUD(Creeat, Read, Updadte, and Delete) to manage the store's inventory in both conolses and games. Consoles recods are captured by using Name, Developer, Release Year, and Conditon, repersented as an enum. The games are captured the same way but we add Publisher. Then the owner can Create tags usch as Action, Shooter, and First Person, to name a few, to assign to games via a many-to-many relationship, mean that games can have mutiple tags and tags can have mutiple gaems. And whenm a worker process a checkout, point of sale, it should record the checkout and updated invintory. And from a public perpsective, unauthecatied user (guest), is allowed to view avilabe invitory of games nad consles.
+        -The Game Store Tracker is aimed at helping those starting a business in which they sell games and consoles. This would allow the owner, authenticated user, to make a store entity in which he can start to add Workers and assign positions. We will also be able to manage the store's inventory, so that when a worker process a sale, it should record the checkout and update the inventory. This project required the use of many .NET technologies, including Entity Framework, unit testing with xUnit, and much more.
         
 
     Create an API thet does the follwoing:
