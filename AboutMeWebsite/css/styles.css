@@ -1,0 +1,47 @@
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+}
+
+h2 {
+    color: blue;
+    font-family: verdana;
+    font-size: 200%;
+}
+
+h3 {
+    color: blue;
+    font-family: verdana;
+    font-size: 150%;
+}
+
+h4 {
+    color: blue;
+    font-family: verdana;
+}
+
+p {
+    color: red;
+    font-family: courier;
+}
+
+ul {
+    color: red;
+    font-family: courier;
+}
+
+.invisible-inline-link {
+    color: transparent;
+    /* Makes text color transparent */
+    text-decoration: none;
+    /* Removes underline */
+    border: none;
+    /* Remove any borders */
+    outline: none;
+    /* Remove focus outlines */
+    background: transparent;
+    /* Remove any background */
+    display: inline;
+    /* Keep it inside paragraph */
+}
