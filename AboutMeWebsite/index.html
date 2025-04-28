@@ -10,83 +10,96 @@
 
 <body>
     <h1>About Me</h1>
-    <p>I’m a .NET Full-stack Developer with experience in building scalable web applications using ASP.NET Core, Entity
-        Framework. C#, and modern JavaScript frameworks like React. I’ve done projects involving API development,
-        dynamic
-        filtering, and user-friendly dashboards. Enjoy turning the real world into elegant digital solutions, and thrive
-        in solo
-        and collaborative Agile environments.
-    </p>
     <p>
-        Outside of core dev work, wrote unit tests with xUnit and Moq, and explored DevOps fundamentals like CI/CD. I’m
-        also
-        some who enjoys the learning curve, loves improving my design patterns, exploring new .NET features, and
-        learning from
-        others. <a href="css/Faviorte.html" class="invisible-inline-link">&nbsp;</a>
+        I recently graduated with a degree in Computer Engineering from [Your University Name]. During my time there, I
+        focused
+        on software development and gained hands-on experience in building applications. For my senior project my team
+        and I
+        decided on making a smart parking system by using a microcontroller, esp32, and making a mobile app in flutter.
+        Foe the
+        app I helped in making the UI, made the back end, and for the microcontroller I help with the communication with
+        the
+        database. I’m now looking to grow my skills even future by joining a professional .NET Full-stack development
+        team. I’m
+        interested more in working in a collaborative environment where I can keep learning-whether that’s through
+        hands-on
+        coding, mentorship, or building scalable solutions with technologies like ASP.NET and C#.<a
+            href="css/Resume.html" class="invisible-inline-link">&nbsp;</a>
     </p>
-
     <hr>
-    <h2>Education</h2>
-    <p>Bachelor's Degree - Computer Engineering</p>
-    <p>University Of Texas-Rio Grande Valley - May 2024</p>
-
-    <hr>
-    <h2>Skills</h2>
-    <ul>
-        <li>C#</li>
-        <li>ASP.NET Core</li>
-        <li>Enity Framework</li>
-        <li>Java</li>
-        <li>Spring Boot</li>
+    <h2>Favorite Games</h2>
+    <ul class="horizontal-list">
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Shadow_of_the_Colossus" target="_blank">
+                Shadow of the Colossus
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time" target="_blank">
+                The Legend of Zelda: Ocarina of Time
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Monster_Hunter_Wilds" target="_blank">
+                Monster Hunter Wilds
+            </a>
+        </li>
     </ul>
-
-    <hr>
-    <h2>Work Experience</h2>
-    <h3>Revature</h3>
-    <p>Java Intern</p>
-    <p>Oct 2024 - Dec 2024</p>
-    <h3>Revature Pre-Employment Program</h3>
-    <p>Role: Back-end Developer</p>
-    <h4>Responsibilities</h4>
-    <ul>
-        <li>Developed programming skills in Java, SQL, RESTful API Construction and Spring Framework</li>
-        <li>Implemented project work including construction of functional REST APIs using Test Driven Development
-            methodologies</li>
-        <li>Completed 108 Coding Activities</li>
-        <li>Showcased understanding of concepts through fourteen (14) evaluations</li>
-        <li>Leverage Java APIs to write algorithms to solve various challenges and problem sets</li>
+    <h2>Favorite Movies</h2>
+    <ul class="horizontal-list">
+        <li>
+            <a href="https://en.wikipedia.org/wiki/The_Nightmare_Before_Christmas" target="_blank">
+                The Nightmare Before Christmas
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Spirited_Away" target="_blank">
+                Spirited Away
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Sinners_(2025_film)" target="_blank">
+                Sinners
+            </a>
+        </li>
     </ul>
-    <h4>Tools / Technologies</h4>
-    <p>Java, SQL, JDBC, Maven, GIT, Javalin, JUnit, Mockito, Logback, Spring Framework, Spring Boot, Spring Web Module,
-        Spring
-        Data JPA Module.
-    </p>
-
-    <hr>
-    <h2>Projects</h2>
-    <a href="https://github.com/250407-NET-FS/Roberto-L.git">
-        <h3>The Game Store Tracker</h3>
-    </a>
-    <p>The Game Store Tracker is aimed at helping those starting a business in which they sell games and consoles. This
-        would
-        allow the owner, authenticated user, to make a store entity in which he can start to add Workers and assign
-        positions.
-        We will also be able to manage the store's inventory, so that when a worker process a sale, it should record the
-        checkout and update the inventory. This project required the use of many .NET technologies, including Entity
-        Framework,
-        unit testing with xUnit, and much more.
-    </p>
-    <h4>Roles / Responsibilities</h4>
-    <p>Role: Fullstack Developer</p>
-    <p>Responsibilities:</p>
-    <ul>
-        <li>Developed the backend RESTful API using ASP.NET Core</li>
-        <li>Implemented core business logic, data models, and repository patterns</li>
+    <h2>Favorite Songs</h2>
+    <ul class="horizontal-list">
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Dear_God_(Avenged_Sevenfold_song)" target="_blank">
+                Dear God
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/El_Rey_(song)" target="_blank">
+                El Rey
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/The_World_We_Knew_(Over_and_Over)" target="_blank">
+                The World We Knew (Over and Over)
+            </a>
+        </li>
     </ul>
-    <h4>Environment / Technologies</h4>
-    <p>C#, Git, ASP.NET Core Web API, Docker</p>
+    <h2>Pets</h2>
+    <img src="Images/Megumin.jpg" alt="My dog, a boston terrier, named Megumin" class="small-image" />
+    <img src="Images/Elsa.jpg" alt="My, white, cat named Elsa" class="small-image" />
+    <hr>
+    <h1>Shopping Cart</h1>
+    <input type="text" id="item-input" placeholder="Enter item name">
+    <input type="number" id="quantity-input" placeholder="Enter quantity" min="1">
 
+    <button onclick="addItem()">Add</button>
 
+    <ul id="item-list"></ul>
+
+    <button onclick="showListInAlert()">Show List (Alert)</button>
+    <button onclick="showListInToast()">Show List (Toast)</button>
+
+    <!-- Toast container -->
+    <div id="toast-container"></div>
+
+    <script src="JavaScript/Shopping.js"></script>
 </body>
 
 </html>

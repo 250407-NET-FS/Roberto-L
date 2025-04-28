@@ -31,6 +31,79 @@ ul {
     font-family: courier;
 }
 
+.horizontal-list {
+    display: flex;
+    /* Enables Flexbox */
+    flex-wrap: wrap;
+    /* Wrap to new line whenn needed */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
+    list-style-type: none;
+    /* Removes bullet points */
+}
+
+.horizontal-list li {
+    padding: 10px;
+    /* Adds space around each list item */
+}
+
+.horizontal-list a {
+    text-decoration: none;
+    /* Removes the underline */
+    color: red;
+    /* Link color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+}
+
+.horizontal-list a:hover {
+    color: blue;
+    /* Text color when hovered */
+}
+
+.small-image {
+    width: 150px;
+    height: auto;
+    /* Keeps correct proportions */
+}
+
+#item-list {
+    display: flex;
+    /* Enables Flexbox */
+    flex-wrap: wrap;
+    /* Wrap to new line whenn needed */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
+    list-style-type: none;
+    /* Removes bullet points */
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+#item-list li {
+    padding: 10px;
+    /* Adds space around each list item */
+}
+
 .invisible-inline-link {
     color: transparent;
     /* Makes text color transparent */
